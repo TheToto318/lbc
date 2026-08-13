@@ -1,3 +1,14 @@
+## 1.1.5
+
+### Added
+
+- Implemented multiple search using conditional OR operators.
+
+### Changed
+
+- Updated dependencies.
+- Simplified the DataDome 403 error message. #13
+
 ## 1.1.4
 
 ### Changed
