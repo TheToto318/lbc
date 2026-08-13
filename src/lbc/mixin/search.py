@@ -6,7 +6,7 @@ class SearchMixin:
     def search(
         self,
         url: str | None = None,
-        text: str | None = None,
+        text: str | list[str] | None = None,
         category: Category = Category.TOUTES_CATEGORIES,
         sort: Sort = Sort.RELEVANCE,
         locations: list[Region, Department, City]

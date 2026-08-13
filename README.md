@@ -131,6 +131,24 @@ client.search(
 
 If `url` is provided, it overrides other keyword parameters such as `text`, `category`, `locations`, etc. However, pagination parameters like `page`, `limit`, and `limit_alu` are still applied.
 
+### Multiple Search
+
+You can pass a list of values to search for multiple terms at once.
+
+The values are converted into a Leboncoin `OR` query. For example:
+
+```python
+client.search(text=["Laptop", "Desktop"])
+```
+
+This generates a search equivalent to:
+
+```text
+Laptop OR Desktop
+```
+
+This can be useful for combining multiple keywords into a single search query without having to perform separate requests.
+
 ### Location
 
 The `locations` parameter accepts a list of one or more location objects. You can use one of the following:
