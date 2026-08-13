@@ -1,5 +1,5 @@
-from ..model import User
 from ..exceptions import NotFoundError
+from ..model import User
 
 
 class UserMixin:

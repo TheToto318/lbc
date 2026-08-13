@@ -1,6 +1,7 @@
-from curl_cffi import requests, BrowserTypeLiteral
 import random
 import uuid
+
+from curl_cffi import BrowserTypeLiteral, requests
 
 from ..model import Proxy
 

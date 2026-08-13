@@ -1,9 +1,9 @@
-from curl_cffi import BrowserTypeLiteral
 import curl_cffi
+from curl_cffi import BrowserTypeLiteral
 
-from .mixin import SessionMixin, SearchMixin, UserMixin, AdMixin
+from .exceptions import DatadomeError, NotFoundError, RequestError
+from .mixin import AdMixin, SearchMixin, SessionMixin, UserMixin
 from .model import Proxy
-from .exceptions import DatadomeError, RequestError, NotFoundError
 
 
 class Client(SessionMixin, SearchMixin, UserMixin, AdMixin):

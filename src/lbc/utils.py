@@ -1,5 +1,5 @@
-from .model import Category, AdType, OwnerType, Sort, Region, Department, City
 from .exceptions import InvalidValue
+from .model import AdType, Category, City, Department, OwnerType, Region, Sort
 
 
 def build_search_payload_with_url(
@@ -238,9 +238,8 @@ def build_search_payload_with_args(
                     )
 
     # Search in title only
-    if text:
-        if search_in_title_only:
-            payload["filters"]["keywords"]["type"] = "subject"
+    if text and search_in_title_only:
+        payload["filters"]["keywords"]["type"] = "subject"
 
     if shippable:
         payload["filters"]["location"]["shippable"] = True

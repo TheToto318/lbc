@@ -10,11 +10,11 @@ import lbc
 
 client = lbc.Client()
 
-location = lbc.City( 
+location = lbc.City(
     lat=48.85994982004764,
     lng=2.33801967847424,
-    radius=10_000, # 10 km
-    city="Paris"
+    radius=10_000,  # 10 km
+    city="Paris",
 )
 
 result = client.search(
@@ -26,7 +26,7 @@ result = client.search(
     ad_type=lbc.AdType.OFFER,
     category=lbc.Category.IMMOBILIER,
     square=[200, 400],
-    price=[300_000, 700_000]
+    price=[300_000, 700_000],
 )
 
 for ad in result.ads:
@@ -57,11 +57,11 @@ You can also configure the client to use a proxy by providing a `Proxy` object:
 ```python
 # Setup proxy1
 proxy1 = lbc.Proxy(
-	host="127.0.0.1",
-	port=12345,
-	username="username",
-	password="password",
-	scheme="http"
+    host="127.0.0.1",
+    port=12345,
+    username="username",
+    password="password",
+    scheme="http",
 )
 
 # Initialize client with proxy1
@@ -69,8 +69,8 @@ client = lbc.Client(proxy=proxy1)
 
 # Setup proxy2
 proxy2 = lbc.Proxy(
-	host="127.0.0.1",
-	port=23456,
+    host="127.0.0.1",
+    port=23456,
 )
 
 # Change client proxy to proxy2
@@ -89,7 +89,7 @@ This function accepts keyword arguments (`**kwargs`) to customize your query.
 For example, if you're looking for houses that include both land and parking, you can specify:
 
 ```python
-real_estate_type=["3", "4"]
+real_estate_type = ["3", "4"]
 ```
 
 These values correspond to what you’d find in a typical Leboncoin URL, like:
@@ -125,7 +125,7 @@ You can also perform search using a full Leboncoin URL:
 client.search(
     url="https://www.leboncoin.fr/recherche?category=9&text=maison&locations=Paris__48.86023250788424_2.339006433295173_9256&square=100-200price=500000-1000000&rooms=1-6&bedrooms=3-6&outside_access=garden,terrace&orientation=south_west&owner_type=private",
     page=1,
-    limit=35
+    limit=35,
 )
 ```
 
@@ -148,7 +148,7 @@ location = lbc.City(
     lat=48.85994982004764,
     lng=2.33801967847424,
     radius=10_000,  # in meters
-    city="Paris"
+    city="Paris",
 )
 ```
 

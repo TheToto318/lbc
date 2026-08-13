@@ -1,4 +1,4 @@
-from ..model import Category, Sort, Region, Department, City, AdType, OwnerType, Search
+from ..model import AdType, Category, City, Department, OwnerType, Region, Search, Sort
 from ..utils import build_search_payload_with_args, build_search_payload_with_url
 
 
