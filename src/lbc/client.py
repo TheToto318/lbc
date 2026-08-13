@@ -81,14 +81,9 @@ class Client(SessionMixin, SearchMixin, UserMixin, AdMixin):
                 return self._fetch(
                     method=method, url=url, payload=payload, max_retries=max_retries - 1
                 )
-            if self.proxy:
-                raise DatadomeError(
-                    "Access blocked by Datadome: your proxy appears to have a poor reputation, try to change it."
-                )
-            else:
-                raise DatadomeError(
-                    "Access blocked by Datadome: your activity was flagged as suspicious. Please avoid sending excessive requests."
-                )
+            raise DatadomeError(
+                "Access blocked by Datadome: your activity was flagged as suspicious. Please avoid sending excessive requests."
+            )
         elif response.status_code == 404 or response.status_code == 410:
             raise NotFoundError("Unable to find ad or user.")
         else:
