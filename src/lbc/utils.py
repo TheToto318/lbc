@@ -151,7 +151,7 @@ def build_search_payload_with_url(
 
 
 def build_search_payload_with_args(
-    text: str | None = None,
+    text: str | list[str] | None = None,
     category: Category = Category.TOUTES_CATEGORIES,
     sort: Sort = Sort.RELEVANCE,
     locations: list[Region | Department | City]
@@ -168,6 +168,9 @@ def build_search_payload_with_args(
     search_in_title_only: bool = False,
     **kwargs,
 ) -> dict:
+    if isinstance(text, list):
+        text = " OR ".join(text)
+
     payload = {
         "filters": {
             "category": {"id": category.value},
